@@ -4,7 +4,9 @@ namespace AspNetCore.Bookstore.Domain.Entities
 {
     public class Cliente
     {
-        public Cliente(string nome, string email, string telefone)
+        public Cliente() { }
+
+        public Cliente(string nome, string email, string telefone): this()
         {
             Nome = nome;
             Email = email;

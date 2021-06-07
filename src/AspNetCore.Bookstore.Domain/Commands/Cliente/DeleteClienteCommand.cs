@@ -4,7 +4,7 @@ namespace AspNetCore.Bookstore.Domain.Commands.Cliente
 {
     public class DeleteClienteCommand : ClienteCommand
     {
-
+        protected DeleteClienteCommand() { }
         public DeleteClienteCommand(int id)
         {
             Id = id;

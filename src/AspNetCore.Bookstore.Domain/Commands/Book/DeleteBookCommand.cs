@@ -1,12 +1,16 @@
-using AspNetCore.Bookstore.Domain.Commands.Book;
 using AspNetCore.Bookstore.Domain.Validations;
 
-namespace AspNetCore.Bookstore.Domain.Commands
+namespace AspNetCore.Bookstore.Domain.Commands.Book
 {
     public class DeleteBookCommand : BookCommand
     {
-        public DeleteBookCommand(int id) =>
+        protected DeleteBookCommand() { }
+
+        public DeleteBookCommand(int id)
+        {
             ID = id;
+        }
+            
 
         public override bool IsValid()
         {
