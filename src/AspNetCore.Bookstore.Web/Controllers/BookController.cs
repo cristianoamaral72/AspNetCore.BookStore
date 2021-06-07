@@ -7,6 +7,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCore.Bookstore.Domain.Commands.Book;
 
 namespace AspNetCore.Bookstore.Web.Controllers
 {

@@ -1,4 +1,5 @@
 using AspNetCore.Bookstore.Domain.Commands;
+using AspNetCore.Bookstore.Domain.Commands.Book;
 using FluentValidation;
 
 namespace AspNetCore.Bookstore.Domain.Validations

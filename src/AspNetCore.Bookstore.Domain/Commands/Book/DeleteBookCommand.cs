@@ -1,3 +1,4 @@
+using AspNetCore.Bookstore.Domain.Commands.Book;
 using AspNetCore.Bookstore.Domain.Validations;
 
 namespace AspNetCore.Bookstore.Domain.Commands

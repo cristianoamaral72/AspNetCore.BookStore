@@ -1,4 +1,4 @@
-namespace AspNetCore.Bookstore.Domain.Commands
+namespace AspNetCore.Bookstore.Domain.Commands.Book
 {
     public class CreateBookCommand : BookCommand
     {

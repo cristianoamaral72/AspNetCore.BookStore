@@ -3,7 +3,7 @@ using AspNetCore.Bookstore.Domain.Validations;
 using FluentValidation.Results;
 using MediatR;
 
-namespace AspNetCore.Bookstore.Domain.Commands
+namespace AspNetCore.Bookstore.Domain.Commands.Book
 {
     public abstract class BookCommand : IRequest<Result>, ICommand
     {

@@ -9,6 +9,7 @@ namespace AspNetCore.Bookstore.IoC
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
         }
     }
 }

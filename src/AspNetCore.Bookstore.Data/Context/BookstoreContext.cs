@@ -8,9 +8,16 @@ namespace AspNetCore.Bookstore.Data.Context
     {
         public BookstoreContext(DbContextOptions options) : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) =>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.ApplyConfiguration(new BookMap());
+            modelBuilder.ApplyConfiguration(new ClienteMap());
+        }
+         
 
         public DbSet<Book> Books {get; set; }
+        public DbSet<Cliente> Cliente {get; set; }
+
     }
+   
 }

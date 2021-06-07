@@ -13,6 +13,6 @@ namespace AspNetCore.Bookstore.Domain.Notifications
             Message = message;
         
         public Notification(ValidationResult result) =>
-            Message = string.Join(Environment.NewLine, result.Errors?.Select(x => x.ErrorMessage));        
+            Message = string.Join(Environment.NewLine, result.Errors?.Select(x => x.ErrorMessage) ?? Array.Empty<string>());        
     }
 }

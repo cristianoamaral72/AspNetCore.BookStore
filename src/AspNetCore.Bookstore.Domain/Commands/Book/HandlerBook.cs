@@ -2,21 +2,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AspNetCore.Bookstore.Domain.Entities;
 using AspNetCore.Bookstore.Domain.Interfaces.Repositories;
 using AspNetCore.Bookstore.Domain.Notifications;
 using MediatR;
 
-namespace AspNetCore.Bookstore.Domain.Commands
+namespace AspNetCore.Bookstore.Domain.Commands.Book
 {
-    public class Handler : IRequestHandler<CreateBookCommand, Result>,
+    public class HandlerBook : IRequestHandler<CreateBookCommand, Result>,
                            IRequestHandler<UpdateBookCommand, Result>,
                            IRequestHandler<DeleteBookCommand, Result>
     {
         private readonly IMediator _mediator;
         private readonly IBookRepository _bookRepository;
 
-        public Handler(IMediator mediator,
+        public HandlerBook(IMediator mediator,
                        IBookRepository bookRepository)
         {
             _mediator = mediator;
@@ -33,7 +32,7 @@ namespace AspNetCore.Bookstore.Domain.Commands
             if (request.IsValid())
                 if (await _bookRepository.GetById(request.ID) == null)
                     await _bookRepository.Add(
-                        new Book(request.ID, request.Title, request.Author, request.Category, request.Quantity, request.Price)
+                        new Entities.Book(request.ID, request.Title, request.Author, request.Category, request.Quantity, request.Price)
                     );
                 else
                 {
