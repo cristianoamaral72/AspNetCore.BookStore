@@ -8,36 +8,36 @@ namespace AspNetCore.Bookstore.Data.Repositories
 {
     public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
-        protected readonly BookstoreContext db;
+        protected readonly BookstoreContext Db;
 
         public RepositoryBase(BookstoreContext context) =>
-            db = context;
-
-        public virtual async Task Add(TEntity obj)
-        {
-            db.Add(obj);
-            await db.SaveChangesAsync();
-        }
+            Db = context;
 
         public virtual async Task<IEnumerable<TEntity>> GetAll() =>
-            await db.Set<TEntity>().ToListAsync();
+            await Db.Set<TEntity>().ToListAsync();
 
         public virtual async Task<TEntity> GetById(int? id) =>
-            await db.Set<TEntity>().FindAsync(id);
-
-        public virtual async Task Remove(TEntity obj)
+            await Db.Set<TEntity>().FindAsync(id);
+        
+        public virtual async Task Add(TEntity obj)
         {
-            db.Set<TEntity>().Remove(obj);
-            await db.SaveChangesAsync();
+            Db.Add(obj);
+            await Db.SaveChangesAsync();
         }
 
         public virtual async Task Update(TEntity obj)
         {
-            db.Entry(obj).State = EntityState.Modified;
-            await db.SaveChangesAsync();
+            Db.Entry(obj).State = EntityState.Modified;
+            await Db.SaveChangesAsync();
+        }
+
+        public virtual async Task Remove(TEntity obj)
+        {
+            Db.Set<TEntity>().Remove(obj);
+            await Db.SaveChangesAsync();
         }
 
         public void Dispose() =>
-            db.Dispose();
+            Db.Dispose();
     }
 }

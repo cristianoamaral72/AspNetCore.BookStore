@@ -13,12 +13,12 @@ namespace AspNetCore.Bookstore.Data.Repositories
         public BookRepository(BookstoreContext context) : base(context) { }
 
         public async Task<IEnumerable<Book>> FindBooksByAuthor(string author) =>
-            await db.Books
+            await Db.Books
                 .Where(b => EF.Functions.Like(b.Author, $"%{author}%"))
                 .ToListAsync();
 
         public async Task<Book> GetByTitle(string title) =>
-            await db.Books
+            await Db.Books
                 .FirstOrDefaultAsync(b => b.Title.Equals(title));
     }
 }

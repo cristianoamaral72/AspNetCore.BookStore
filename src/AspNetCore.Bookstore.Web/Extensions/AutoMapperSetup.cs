@@ -2,6 +2,7 @@ using System.Reflection;
 using AspNetCore.Bookstore.Application.AutoMapper;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.DependencyInjection;
 
 namespace AspNetCore.Bookstore.Web.Extensions
 {
