@@ -29,6 +29,7 @@ namespace AspNetCore.Bookstore.Web.Controllers
         // GET: ClienteController
         public async Task<ActionResult> Index()
         {
+            //var cliente = await _clienteRepository.FindClientesByNome("Cristiano da Silva Ribeiro");
             var response = await _clienteRepository.GetAll();
             return View(response);
         }

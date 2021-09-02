@@ -29,13 +29,18 @@ namespace AspNetCore.Bookstore.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options =>
+                {
+                    options.EnableEndpointRouting = false;
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
             services.AddAutoMapperSetup();
             services.AddMediatRSetup();
 
             NativeInjectorConfig.RegisterServices(services);
         }
-        
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -54,9 +59,7 @@ namespace AspNetCore.Bookstore.Web
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Book}/{action=Index}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller=Book}/{action=Index}/{id?}");
             });
         }
     }
