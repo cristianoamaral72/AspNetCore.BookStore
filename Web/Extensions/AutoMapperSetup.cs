@@ -11,7 +11,7 @@ namespace AspNetCore.Bookstore.Web.Extensions
         public static void AddAutoMapperSetup(this IServiceCollection services)
         {
             var mapper = AutoMapperConfiguration.ConfigureMappings();
-            services.AddAutoMapper(x => mapper.CreateMapper(), Assembly.Load("AspNetCore.Bookstore.Application"));
+            services.AddAutoMapper(x => mapper.CreateMapper(), Assembly.Load("Application"));
         }
     }
 }
