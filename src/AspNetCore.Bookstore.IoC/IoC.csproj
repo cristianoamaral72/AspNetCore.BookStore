@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetCore.Bookstore.Domain\Domain.csproj" />
+    <ProjectReference Include="..\AspNetCore.Bookstore.Data\Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

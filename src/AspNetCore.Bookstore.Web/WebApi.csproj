@@ -20,10 +20,10 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\AspNetCore.Bookstore.Domain\AspNetCore.Bookstore.Domain.csproj" />
-    <ProjectReference Include="..\AspNetCore.Bookstore.Data\AspNetCore.Bookstore.Data.csproj" />
-    <ProjectReference Include="..\AspNetCore.Bookstore.Application\AspNetCore.Bookstore.Application.csproj" />
-    <ProjectReference Include="..\AspNetCore.Bookstore.IoC\AspNetCore.Bookstore.IoC.csproj" />
+    <ProjectReference Include="..\AspNetCore.Bookstore.Domain\Domain.csproj" />
+    <ProjectReference Include="..\AspNetCore.Bookstore.Data\Infra.Data.csproj" />
+    <ProjectReference Include="..\AspNetCore.Bookstore.Application\Application.csproj" />
+    <ProjectReference Include="..\AspNetCore.Bookstore.IoC\IoC.csproj" />
   </ItemGroup>
 
 </Project>
